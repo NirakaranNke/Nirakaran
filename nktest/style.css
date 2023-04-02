@@ -1,0 +1,407 @@
+
+
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+
+.load {
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		background: white;
+		position: fixed;
+		top:0px;
+		left: 0px;
+}
+
+.loader {
+		position: fixed;
+		top: 40%;
+		left: 47%;
+		display: inline-block;
+		background: white;
+	}
+
+
+.bar{
+		float: left;
+		background: red;
+		height: 25px;
+		width: 5px;
+		margin: 2px;
+		animation-name: loadinganimation;
+		animation-duration: .72s;
+		animation-iteration-count: infinite;
+		border-radius: 5px;
+		
+	}
+
+	@keyframes loadinganimation {
+		0%,20%,80%,100% { transform: scale(1);}
+		50% {transform: scaleY(1.8);}		
+	}
+
+	.second{animation-delay: 0.08s;}
+	.third{animation-delay: 0.16s;}
+	.fourth{animation-delay: 0.32s;}
+	.fifth{animation-delay: 0.40s;}
+	.sixth{animation-delay: 0.48s;}
+	.seventh{animation-delay: 0.56s;}
+	.eighth{animation-delay: 0.64s;}
+
+@media screen and (max-width: 500px){
+	.loader {
+		left:40%;
+	}
+}
+
+#homebody{
+	background: rgb(0,0,0);
+	overflow: hidden;
+}
+
+
+.hamburger{
+		cursor: pointer;
+		display: inline-block;
+		position: fixed;
+		top: 20px;
+		left: 20px;
+		z-index: 100;
+	}
+
+	.line1, .line2, .line3{
+		width: 30px;
+    	height: 4px;
+		background: white;
+		margin-top: 3px;
+		transition:transform .3s;
+		box-shadow: 1px 1px 10px;
+		border-radius: 10px;
+	}
+
+	.change .line1{
+		transform: translate(-3px, 10px) rotate(45deg);
+		
+
+	}
+
+	.change .line2{
+		opacity: 0;
+
+	}
+
+	.change .line3{
+		transform: translate(-3px, -4px) rotate(-45deg) ;
+	}
+
+.nav {
+	width: 0%;
+	height: 80px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	transition: width .3s;
+	transition-timing-function: ease-in-out;
+	border-right: 5px inset rgba(200, 200, 100, 0.8);
+	box-shadow: 5px 5px 70px;
+	margin-left: -5px;
+	background: url('NavyBlues.png'); 
+	z-index: 10;
+}
+
+
+	.navMenu {
+		margin-top: 0%;
+		background-color: navy;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		transition: transform .3s;	
+		overflow: hidden;
+		transform: scale(0);
+	}
+
+
+	.navMenu a{
+		color:rgb(247, 247, 251);
+		text-decoration: navy;
+		text-align: center;
+		padding: calc(1vw + 5px);
+		font-size:calc(1.5vw + 5px); 
+		transition: color 1s, background 1s;
+	}
+
+	.navMenu a:hover, .navMobile a:hover{
+		color: navy;
+		text-decoration: navy;
+		background: rgb(244, 244, 246);
+		background-size :  90% !important;
+	}
+
+
+
+
+.navMobile {
+	display: none;
+}
+
+#Vid{
+	width: 100%;
+	filter: brightness(50%);
+	position: fixed;
+	z-index: -100;
+	top: 0;
+}
+
+
+
+#mobileBackground{
+	display: none;
+	filter: brightness(50%);
+	position: fixed;
+	z-index: -100;
+	top: 0;
+	width: auto;
+
+}
+
+.homeheading {
+	text-align: center;
+	font-size: calc(6vw + 8px);
+	color: rgb(249, 201, 12);
+	margin-top: 10%;
+	user-select: none;
+	font-family: 'Black Han Sans', sans-serif;
+}
+
+.hometext {
+	text-align: center;
+	font-size: calc(1.5vw + 7px);
+	color: white;
+	margin-left:50px;
+	margin-right: 50px;
+	font-family: 'ABeeZee', sans-serif;
+}
+
+footer {
+	width: 100%;
+	height: 50px;
+	background: rgb(0,0,0);
+	color: white;
+	padding-top: 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footerText{
+	margin-top: 5px;
+	margin-left: 10px;
+	font-size: calc(.8vw + 10px);
+}
+
+.footIcons{	
+	padding-right: 10px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.footIcons img{
+	width: calc(1vw + 15px);
+	margin: 2px;
+	transition: transform .3s;
+}
+
+.footIcons img:hover{
+	transform: rotate(360deg) scale(1.2);
+}
+
+@media screen and (max-width: 650px) {
+    .homebody {
+    	margin-top: 70px;
+    	overflow: scroll;
+    }
+
+
+
+    .hamburger{
+		top: 10px;
+		left: 10px;
+	}
+
+    .line1, .line2, .line3{
+		width: calc(20px + 1vw);
+	}
+
+    #Vid{
+    	width: 200%;
+		height: auto;
+    }
+
+	.nav {
+		transition: width .1s;
+	}
+
+	.navMenu {
+		display: none;
+	}
+
+
+.navMobile {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: auto;
+	text-align: center;
+	overflow: hidden;
+	}
+
+.navMobile a {
+	color: white;
+	text-decoration: none;
+	padding-top: auto;
+	padding-bottom: auto;
+	font-size: 14px;
+}
+
+}
+
+.container {
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	background-color: transparent;
+  }
+  
+  .section {
+	height: auto;
+	display: flex;
+	background-color: transparent;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  #section1 {
+	background-color:transparent;
+  }
+  
+  #section2 {
+	background-color: transparent;
+  }
+  
+  #section3 {
+	background-color: transparent;
+  }
+
+
+  .con-tainer {
+	height: auto;
+	display: flex;
+	scroll-behavior: smooth;
+	background-color: transparent;
+  } 
+
+  .sect {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+  }
+  
+  .cardboard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: auto;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	margin: 20px;
+  }
+  .cardboard2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: auto;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	margin: 20px;
+  }
+  
+  .cardboard img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-bottom: 20px;
+  }
+  
+  .cardboard h3 {
+	font-size: 24px;
+	margin-bottom: 10px;
+  }
+  
+  .cardboard p {
+	font-size: 16px;
+	line-height: 1.5;
+  }
+
+
+
+  .cardboard1 {
+	position: absolute;
+	left: -300px; 
+	transition: left 0.5s ease;
+  }
+  
+  .cardboard1.active {
+	left: 0; 
+  }
+
+
+  .cardboard2 img {
+	width: auto;
+	height: auto;
+	object-fit: fill;
+	border-radius: 0;
+	margin-bottom: auto;
+  }
+
+
+  .con-tainer {
+	display: flex;
+	flex-wrap: wrap;
+  }
+  
+  .sect {
+	flex: 1;
+	padding: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+	.con-tainer {
+	  flex-direction: column;
+	}
+  }
+
+
+  #section5{
+	color: #fff;
+	padding: 20px;
+	margin: 30px;
+  }
+  .headerclass{
+	color:navy
+  }
